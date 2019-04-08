@@ -2,7 +2,7 @@ extends layout
 block style
 	link(rel='stylesheet', href='/stylesheets/style.css')
 block content
-	div
+	.col-sm-8
 		- console.log(data);
 		table#customers
 			thead
@@ -10,12 +10,14 @@ block content
 					th Name
 					th Status
 					th Date
+			tbody
 				each logs,logIndex in data
 					tr
 						td #{logs.name}
-						td #{logs.name}
-						td #{logs.name}
-		form( action='/' method="get")
+						td #{logs.shopname}
+						td #{logs.status}
+	.col-sm-4
+		form#listSave( action='/list' method="post")
 			div.form-group
 				label Name:
 			div.form-group
@@ -28,6 +30,6 @@ block content
 				label Status:
 			div.form-group
 				input#status.form-control(type='text', placeholder='status' name='status')
-			button.btn.btn-primary#formsubmit(type='submit') Sign up
+			button.btn.btn-primary#formsubmit(type='submit') Submit
 block script
 	script(src="/javascripts/commentsave.js")
