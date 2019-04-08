@@ -7,10 +7,9 @@ $("#formsubmit").on("click", e => {
 		method: "POST",
 		data: data,
 		success: function(data) {
-            alert("success");
+			location.reload();
         } 
 	});
 });
 
 $('#customers').DataTable();
-alert("fsdfsdfsdf");
